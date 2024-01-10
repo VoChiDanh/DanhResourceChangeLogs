@@ -13,7 +13,7 @@ const MineRegionButton = document.getElementById('MineRegionButton');
 const LiteFishingButton = document.getElementById('LiteFishingButton');
 const MassStorageButton = document.getElementById('MassStorageButton');
 const MMOStatsButton = document.getElementById('MMOStatsButton');
-const PetPlusButton = document.getElementById('PetPlusButton');
+const PetsPlusButton = document.getElementById('PetsPlusButton');
 const MMOCraftingStationButton = document.getElementById('MMOCraftingStationButton');
 const MythItemButton = document.getElementById('MythItemButton');
 const mmoCraftButton = document.getElementById('mmoCraftButton');
@@ -89,7 +89,7 @@ MMOStatsButton.addEventListener('click', () => {
   fetchCommits(apiUrl);
 });
 
-PetPlusButton.addEventListener('click', () => {
+PetsPlusButton.addEventListener('click', () => {
   const apiUrl = 'https://api.github.com/repos/VoChiDanh/PetPlus/commits';
   fetchCommits(apiUrl);
 });
