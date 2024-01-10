@@ -13,6 +13,7 @@ const MineRegionButton = document.getElementById('MineRegionButton');
 const LiteFishingButton = document.getElementById('LiteFishingButton');
 const MassStorageButton = document.getElementById('MassStorageButton');
 const MMOStatsButton = document.getElementById('MMOStatsButton');
+const PetPlusButton = document.getElementById('PetPlusButton');
 const MMOCraftingStationButton = document.getElementById('MMOCraftingStationButton');
 const MythItemButton = document.getElementById('MythItemButton');
 const mmoCraftButton = document.getElementById('mmoCraftButton');
@@ -85,6 +86,11 @@ LiteFishingButton.addEventListener('click', () => {
 
 MMOStatsButton.addEventListener('click', () => {
   const apiUrl = 'https://api.github.com/repos/VoChiDanh/MMOStats/commits';
+  fetchCommits(apiUrl);
+});
+
+PetPlusButton.addEventListener('click', () => {
+  const apiUrl = 'https://api.github.com/repos/VoChiDanh/PetPlus/commits';
   fetchCommits(apiUrl);
 });
 
