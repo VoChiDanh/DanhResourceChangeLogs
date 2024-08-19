@@ -27,7 +27,7 @@ function fetchCommits(apiUrl) {
     .then(response => response.json())
     .then(commits => {
       const changelogMap = new Map();
-      let previousVersion = null;
+      let previousVersion = "1.0";
 
       commits.forEach(commit => {
         const message = commit.commit.message;
