@@ -31,8 +31,8 @@ function fetchCommits(apiUrl) {
 
       commits.forEach(commit => {
         const message = commit.commit.message;
-        const versionRegex = /^(\d+(\.\d+){0,2})(-\w+)?/;
-        const changelogRegex = /^(\d+(\.\d+){0,2})(-\w+)?\s*-\s*(.+)/;
+        const versionRegex = /^(\d+\.\d+\.\d+)/;
+        const changelogRegex = /^(\d+\.\d+\.\d+)\s*-\s*(.+)/;
 
         let version = null;
         let changelog = message;
