@@ -1,33 +1,10 @@
-const changelogList = document.getElementById('changelogList');
-
-const storageButton = document.getElementById('storageButton');
-
-const dungeonButton = document.getElementById('dungeonButton');
-
-const bSoulButton = document.getElementById('bSoulButton');
-
-storageButton.addEventListener('click', () => {
-  const apiUrl = 'https://api.github.com/repos/VoChiDanh/Storage/commits';
-  fetchCommits(apiUrl);
-});
-
-dungeonButton.addEventListener('click', () => {
-  const apiUrl = 'https://api.github.com/repos/VoChiDanh/Dungeons/commits';
-  fetchCommits(apiUrl);
-});
-
-bSoulButton.addEventListener('click', () => {
-  const apiUrl = 'https://api.github.com/repos/VoChiDanh/bSoul/commits';
-  fetchCommits(apiUrl);
-});
-
 function fetchCommits(apiUrl) {
   changelogList.innerHTML = ''; // Clear the changelog list
   fetch(apiUrl)
     .then(response => response.json())
     .then(commits => {
       const changelogMap = new Map();
-      let previousVersion = "1.0";
+      let previousVersion = null;
 
       commits.forEach(commit => {
         const message = commit.commit.message;
@@ -60,7 +37,12 @@ function fetchCommits(apiUrl) {
         const commitDate = new Date(commit.commit.committer.date);
         const formattedDate = commitDate.toLocaleDateString();
 
-        const changelogWithDate = `${changelog} (${formattedDate})`; // Append the commit date to the changelog
+        // Replace \n with <br> for proper HTML formatting
+        const formattedChangelog = changelog
+          .replace(/\n/g, '<br>')
+          .replace(/^-/, '<br>-'); // Ensure text starting with '-' has a preceding line break
+
+        const changelogWithDate = `${formattedChangelog} (${formattedDate})`; // Append the commit date to the changelog
 
         if (changelogMap.has(version)) {
           changelogMap.get(version).push(changelogWithDate);
@@ -84,7 +66,7 @@ function fetchCommits(apiUrl) {
           changelogs.forEach(changelog => {
             const changelogItem = document.createElement('li');
             changelogItem.classList.add('changelog-subitem');
-            changelogItem.textContent = changelog;
+            changelogItem.innerHTML = changelog; // Use innerHTML to render <br> tags
             changelogList.appendChild(changelogItem);
           });
           listItem.appendChild(changelogList);
@@ -99,18 +81,17 @@ function fetchCommits(apiUrl) {
       });
     })
     .catch(error => {
-    const listItem = document.createElement('li');
-    listItem.classList.add('changelog-item');
+      const listItem = document.createElement('li');
+      listItem.classList.add('changelog-item');
 
-    const privateMessage = document.createElement('p');
-    privateMessage.classList.add('private-message');
-    privateMessage.textContent = 'This plugin is private, so changelogs will be hidden.';
-    listItem.appendChild(privateMessage);
+      const privateMessage = document.createElement('p');
+      privateMessage.classList.add('private-message');
+      privateMessage.textContent = 'This plugin is private, so changelogs will be hidden.';
+      listItem.appendChild(privateMessage);
 
-    changelogList.appendChild(listItem);
+      changelogList.appendChild(listItem);
     });
-  }
-
+}
 
 // Initial fetch with default apiUrl
 const defaultApiUrl = 'https://api.github.com/repos/VoChiDanh/Storage/commits';
