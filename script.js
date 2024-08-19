@@ -1,5 +1,6 @@
 const changelogList = document.getElementById('changelogList');
 const storageButton = document.getElementById('storageButton');
+const dungeonButton = document.getElementById('dungeonButton');
 const mmoShopButton = document.getElementById('mmoShopButton');
 const miningContestButton = document.getElementById('miningContestButton');
 const dItemsButton = document.getElementById('dItemsButton');
@@ -21,6 +22,11 @@ const mmoUpgradeButton = document.getElementById('mmoUpgradeButton');
 
 storageButton.addEventListener('click', () => {
   const apiUrl = 'https://api.github.com/repos/VoChiDanh/Storage/commits';
+  fetchCommits(apiUrl);
+});
+
+dungeonButton.addEventListener('click', () => {
+  const apiUrl = 'https://api.github.com/repos/VoChiDanh/Dungeons/commits';
   fetchCommits(apiUrl);
 });
 
