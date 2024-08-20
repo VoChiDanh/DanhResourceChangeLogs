@@ -39,7 +39,6 @@ function fetchCommits(apiUrl) {
         const changelogRegex = /^(\d+\.\d+\.\d+)\s*-\s*(.+)/;
 
         let version = null;
-        let changelog = message;
 
         if (changelogRegex.test(message)) {
           [, version, changelog] = message.match(changelogRegex);
@@ -64,7 +63,7 @@ function fetchCommits(apiUrl) {
         const commitDate = new Date(commit.commit.committer.date);
         const formattedDate = commitDate.toLocaleDateString();
 
-        const changelogWithDate = `${changelog} (${formattedDate})`; // Append the commit date to the changelog
+        const changelogWithDate = `${message} (${formattedDate})`; // Append the commit date to the changelog
 
         if (changelogMap.has(version)) {
           changelogMap.get(version).push(changelogWithDate);
