@@ -1,24 +1,8 @@
 const changelogList = document.getElementById('changelogList');
 const storageButton = document.getElementById('storageButton');
 const dungeonButton = document.getElementById('dungeonButton');
-const mmoShopButton = document.getElementById('mmoShopButton');
-const miningContestButton = document.getElementById('miningContestButton');
-const dItemsButton = document.getElementById('dItemsButton');
+const miningContestButton = document.getElementById('miningContestButton')
 const bSoulButton = document.getElementById('bSoulButton');
-const bSoulMMAddonButton = document.getElementById('bSoulMMAddonButton');
-const mmoXPAddonButton = document.getElementById('mmoXPAddonButton');
-const mythiccShopButton = document.getElementById('mythiccShopButton');
-const rpgDoreButton = document.getElementById('rpgDoreButton');
-const LiteSackButton = document.getElementById('LiteSackButton');
-const MineRegionButton = document.getElementById('MineRegionButton');
-const LiteFishingButton = document.getElementById('LiteFishingButton');
-const MassStorageButton = document.getElementById('MassStorageButton');
-const MMOStatsButton = document.getElementById('MMOStatsButton');
-const PetsPlusButton = document.getElementById('PetsPlusButton');
-const MMOCraftingStationButton = document.getElementById('MMOCraftingStationButton');
-const MythItemButton = document.getElementById('MythItemButton');
-const mmoCraftButton = document.getElementById('mmoCraftButton');
-const mmoUpgradeButton = document.getElementById('mmoUpgradeButton');
 
 storageButton.addEventListener('click', () => {
   const apiUrl = 'https://api.github.com/repos/VoChiDanh/Storage/commits';
@@ -30,93 +14,14 @@ dungeonButton.addEventListener('click', () => {
   fetchCommits(apiUrl);
 });
 
-mmoShopButton.addEventListener('click', () => {
-  const apiUrl = 'https://api.github.com/repos/VoChiDanh/MMOShop/commits';
-  fetchCommits(apiUrl);
-});
-
 miningContestButton.addEventListener('click', () => {
   const apiUrl = 'https://api.github.com/repos/VoChiDanh/MiningContest/commits';
   fetchCommits(apiUrl);
 });
 
-dItemsButton.addEventListener('click', () => {
-  const apiUrl = 'https://api.github.com/repos/VoChiDanh/DItems/commits';
-  fetchCommits(apiUrl);
-});
 
 bSoulButton.addEventListener('click', () => {
   const apiUrl = 'https://api.github.com/repos/VoChiDanh/bSoul/commits';
-  fetchCommits(apiUrl);
-});
-
-bSoulMMAddonButton.addEventListener('click', () => {
-  const apiUrl = 'https://api.github.com/repos/VoChiDanh/bSoulMMAddon/commits';
-  fetchCommits(apiUrl);
-});
-
-mmoXPAddonButton.addEventListener('click', () => {
-  const apiUrl = 'https://api.github.com/repos/VoChiDanh/MMOXPAddon/commits';
-  fetchCommits(apiUrl);
-});
-
-mythiccShopButton.addEventListener('click', () => {
-  const apiUrl = 'https://api.github.com/repos/VoChiDanh/MythiccShop/commits';
-  fetchCommits(apiUrl);
-});
-
-rpgDoreButton.addEventListener('click', () => {
-  const apiUrl = 'https://api.github.com/repos/VoChiDanh/RPGDore/commits';
-  fetchCommits(apiUrl);
-});
-
-LiteSackButton.addEventListener('click', () => {
-  const apiUrl = 'https://api.github.com/repos/VoChiDanh/LiteSack/commits';
-  fetchCommits(apiUrl);
-});
-
-MassStorageButton.addEventListener('click', () => {
-  const apiUrl = 'https://api.github.com/repos/VoChiDanh/MassStorage/commits';
-  fetchCommits(apiUrl);
-});
-
-MineRegionButton.addEventListener('click', () => {
-  const apiUrl = 'https://api.github.com/repos/VoChiDanh/MineRegion/commits';
-  fetchCommits(apiUrl);
-});
-
-LiteFishingButton.addEventListener('click', () => {
-  const apiUrl = 'https://api.github.com/repos/VoChiDanh/LiteFishing/commits';
-  fetchCommits(apiUrl);
-});
-
-MMOStatsButton.addEventListener('click', () => {
-  const apiUrl = 'https://api.github.com/repos/VoChiDanh/MMOStats/commits';
-  fetchCommits(apiUrl);
-});
-
-PetsPlusButton.addEventListener('click', () => {
-  const apiUrl = 'https://api.github.com/repos/VoChiDanh/PetPlus/commits';
-  fetchCommits(apiUrl);
-});
-
-MMOCraftingStationButton.addEventListener('click', () => {
-  const apiUrl = 'https://api.github.com/repos/VoChiDanh/MMOCraftingStation/commits';
-  fetchCommits(apiUrl);
-});
-
-MythItemButton.addEventListener('click', () => {
-  const apiUrl = 'https://api.github.com/repos/VoChiDanh/MythItem/commits';
-  fetchCommits(apiUrl);
-});
-
-mmoCraftButton.addEventListener('click', () => {
-  const apiUrl = 'https://api.github.com/repos/VoChiDanh/MMOCraft/commits';
-  fetchCommits(apiUrl);
-});
-
-mmoUpgradeButton.addEventListener('click', () => {
-  const apiUrl = 'https://api.github.com/repos/VoChiDanh/MMOUpgrade/commits';
   fetchCommits(apiUrl);
 });
 
